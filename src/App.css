@@ -1,0 +1,56 @@
+body{
+  background-color: #282c34;
+}
+
+.app-container {
+  text-align: center;
+  background-color: #282c34;
+  color: #61dafb;
+  margin: auto;
+  width: 60%;
+}
+
+#clear-list{
+  float: left;
+  padding: 10px;
+}
+
+#text-input{
+  width: 80%;
+}
+
+#buttons{
+  float:right;
+}
+
+#erase-item, #add{
+  margin: 5px;
+}
+
+#todo-list{
+  list-style-type: none;
+}
+
+.item-text, .remove {
+  display: inline-block;
+}
+
+.remove{
+  float: right;
+}
+
+button{
+  background-color: #282c34;
+  color: #61dafb;
+  border: solid;
+  border-color: #61dafb;
+  cursor: pointer;
+}
+
+#add{
+  background-color: #282c34;
+  color: #61dafb;
+  border: solid;
+  border-color: #61dafb;
+  cursor: pointer;
+}
