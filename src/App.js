@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-import reactDom from 'react-dom';
+import reactDOM from 'react-dom';
 import react from 'react';
 
 
@@ -21,10 +21,8 @@ class InputSection extends react.Component{
   handleAdd(e){
     if(document.querySelector('#text-input').value !== ""){
       var value = document.querySelector('#text-input').value;
-      var list = document.querySelector('#todo-list');
-      var casing = document.createElement('ListItem');
-      casing.firstChild.innerHTML = value;
-      list.appendChild(casing);
+      reactDOM.render(<ListItem content={value}/>, document.querySelector('#todo-list').appendChild(document.createElement('li')));
+      console.log('Item added to list.');
     }
     else{
       alert('Enter text to add an item to the to-do list.');
@@ -51,21 +49,19 @@ class InputSection extends react.Component{
 class ListItem extends react.Component{
   constructor(props){
     super(props);
-    
     this.handleRemove = this.handleRemove.bind(this);
   }
 
   handleRemove(e){
-    var parent = this.parentNode
-    parent.parentNode.removeChild(parent)
+    e.target.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode);
     console.log('Item removed from list.');
   }
 
   render(){
     return(
-      <li className='todo-item'>
+      <div className='todo-item'>
         <div className='item-text'>{this.props.content}</div> <button className='remove' onClick={this.handleRemove}>X</button>
-      </li>
+      </div>
     );    
   }
 }
@@ -75,7 +71,9 @@ class ListSection extends react.Component{
   render(){
     return(
       <ul id='todo-list'>
-        <ListItem content='[List item]'/>
+        <li>
+          <ListItem content='[List item]'/>
+        </li>
       </ul>
     );
   }
@@ -113,7 +111,7 @@ class App extends react.Component{
 
 
 const element = <App />
-reactDom.render(
+reactDOM.render(
   element,
   document.querySelector('#root')
 )

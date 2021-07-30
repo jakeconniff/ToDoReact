@@ -1,7 +1,11 @@
 # React To-Do App (Basic)
 
-This app is my initial attempt at a basic to-do list, with the capabilities to add and remove items from the list, as well as clearing the list of all items. So far, the bones have been set out for all the basic elements and features, bt I am still configuring the add and remove button functionality. 
+This app is my initial attempt at a basic to-do list. Functionalities included in the app allow the user to add new items to the todo list and remove old ones, as well as fully clear the list.
 
-Upon completion of this project, I am looking to use this as a template to then create a backend database to store the list in, and my current brainstorms include:
+##Remaining objectives:
+-Create backend database to store list entries so that the list doesn't disappear with every refresh.
+
+##Possible additions to the app (brainstorming):
+-Editing feature to change list items without needing to delete the entire entry.
 -Creating feature to store multiple lists that the user can switch between and add/remove from.
 -Create login so different users see different lists and anyone not logged in won't see other lists and their lists won't be saved.
