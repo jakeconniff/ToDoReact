@@ -23,6 +23,7 @@ class InputSection extends react.Component{
       var value = document.querySelector('#text-input').value;
       reactDOM.render(<ListItem content={value}/>, document.querySelector('#todo-list').appendChild(document.createElement('li')));
       console.log('Item added to list.');
+      document.querySelector('#text-input').value = "";
     }
     else{
       alert('Enter text to add an item to the to-do list.');
@@ -33,6 +34,7 @@ class InputSection extends react.Component{
   render(){
     return(
       <form id='input-form'>
+        <br/>
         <input id='text-input' type='text' placeholder='Add item to list...'/>
         <br/>
         <br/>
@@ -60,7 +62,7 @@ class ListItem extends react.Component{
   render(){
     return(
       <div className='todo-item'>
-        <div className='item-text'>{this.props.content}</div> <button className='remove' onClick={this.handleRemove}>X</button>
+        <div className='item-text'>{this.props.content}</div> <button className ='remove' onClick={this.handleRemove}>X</button>
       </div>
     );    
   }
@@ -70,7 +72,7 @@ class ListItem extends react.Component{
 class ListSection extends react.Component{
   render(){
     return(
-      <ul id='todo-list'>
+      <ul id='todo-list' data-message='Nothing to do yet!'>
         <li>
           <ListItem content='[List item]'/>
         </li>
